@@ -3,9 +3,16 @@
 # Ask Doubt on telegram @LokahBotUniverse
 
 class script(object):
-    START_TXT = """<b><blockquote>ʜᴇʟʟᴏ {} 👋,</blockquote>
+    START_TXT = """<b><blockquote>🎧 <b>Welcome {}, to LokahBot Universe!</b> 🎵</blockquote>
     
-ɪ ᴀᴍ ʟᴀᴛᴇꜱᴛ ᴀᴅᴠᴀɴᴄᴇᴅ ᴀɴᴅ ᴘᴏᴡᴇʀꜰᴜʟ ᴀᴜᴛᴏ ꜰɪʟᴛᴇʀ ʙᴏᴛ. ʏᴏᴜ ᴄᴀɴ ᴜꜱᴇ ᴍᴇ ɪɴ ʏᴏᴜʀ ɢʀᴏᴜᴘ ᴛᴏ ᴇᴀʀɴ ᴜɴʟɪᴍɪᴛᴇᴅ ᴍᴏɴᴇʏ...💸</b>"""
+I am your ultimate Music Filter Bot. Add me to your group to index and search for your favorite songs, albums, and tracks instantly. 🎹
+
+<b>Features:</b>
+🎼 High Quality Audio
+📂 User Friendly
+⚡ Fast Search
+
+Just type a song name to get started!</b>"""
 
     CLONE_START_TXT = """<b><blockquote>ʜᴇʟʟᴏ {}, ᴍʏ ɴᴀᴍᴇ <a href=https://t.me/{}>{}</a></blockquote>
     
