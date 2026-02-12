@@ -10,7 +10,7 @@ from info import DATABASE_NAME, USER_DB_URI, OTHER_DB_URI, CUSTOM_FILE_CAPTION, 
 import time
 import datetime
 
-my_client = MongoClient(OTHER_DB_URI)
+my_client = MongoClient(OTHER_DB_URI, tlsAllowInvalidCertificates=True)
 mydb = my_client["referal_user"]
 
 async def referal_add_user(user_id, ref_user_id):
@@ -60,7 +60,7 @@ default_setgs = {
 class Database:
     
     def __init__(self, uri, database_name):
-        self._client = motor.motor_asyncio.AsyncIOMotorClient(uri)
+        self._client = motor.motor_asyncio.AsyncIOMotorClient(uri, tlsAllowInvalidCertificates=True)
         self.db = self._client[database_name]
         self.col = self.db.users
         self.grp = self.db.groups
