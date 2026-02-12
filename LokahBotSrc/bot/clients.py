@@ -1,17 +1,17 @@
-# Don't Remove Credit @VJ_Botz
-# Subscribe YouTube Channel For Amazing Bot @Tech_VJ
-# Ask Doubt on telegram @KingVJ01
+# Don't Remove Credit @LokahBotUniverse
+# Subscribe YouTube Channel For Amazing Bot @LokahBotUniverse
+# Ask Doubt on telegram @LokahBotUniverse
 
 import asyncio
 import logging
 from info import *
 from pyrogram import Client
-from TechVJ.util.config_parser import TokenParser
-from TechVJ.bot import multi_clients, work_loads, TechVJBot
+from LokahBotSrc.util.config_parser import TokenParser
+from LokahBotSrc.bot import multi_clients, work_loads, LokahBot
 
 
 async def initialize_clients():
-    multi_clients[0] = TechVJBot
+    multi_clients[0] = LokahBot
     work_loads[0] = 0
     all_tokens = TokenParser().parse_from_env()
     if not all_tokens:

@@ -10,7 +10,7 @@ from info import *
 from utils import get_settings, pub_is_subscribed, get_size, is_subscribed, save_group_settings, temp, verify_user, check_token, check_verification, get_token, get_shortlink, get_tutorial, get_seconds
 from database.connections_mdb import active_connection
 from urllib.parse import quote_plus
-from TechVJ.util.file_properties import get_name, get_hash, get_media_file_size
+from LokahBotSrc.util.file_properties import get_name, get_hash, get_media_file_size
 logger = logging.getLogger(__name__)
 
 BATCH_FILES = {}
@@ -44,7 +44,7 @@ async def auto_approve(client, message: ChatJoinRequest):
         return 
     data = await db.get_msg_command(ap_user_id)
         
-    if data.split("-", 1)[0] == "VJ":
+    if data.split("-", 1)[0] == "LokahBotUniverse":
         user_id = int(data.split("-", 1)[1])
         vj = await referal_add_user(user_id, message.from_user.id)
         if vj and PREMIUM_AND_REFERAL_MODE == True:

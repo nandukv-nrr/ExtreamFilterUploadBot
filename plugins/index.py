@@ -1,6 +1,6 @@
-# Don't Remove Credit @VJ_Botz
-# Subscribe YouTube Channel For Amazing Bot @Tech_VJ
-# Ask Doubt on telegram @KingVJ01
+# Don't Remove Credit @LokahBotUniverse
+# Subscribe YouTube Channel For Amazing Bot @LokahBotUniverse
+# Ask Doubt on telegram @LokahBotUniverse
 
 import logging, re, asyncio
 from utils import temp
@@ -167,13 +167,17 @@ async def index_files_to_db(lst_msg_id, chat, msg, bot):
                 elif not message.media:
                     no_media += 1
                     continue
-                elif message.media not in [enums.MessageMediaType.VIDEO, enums.MessageMediaType.AUDIO, enums.MessageMediaType.DOCUMENT]:
+                elif message.media not in [enums.MessageMediaType.AUDIO, enums.MessageMediaType.DOCUMENT]:
                     unsupported += 1
                     continue
                 media = getattr(message, message.media.value, None)
                 if not media:
                     unsupported += 1
                     continue
+                if message.media == enums.MessageMediaType.DOCUMENT:
+                    if not media.mime_type.startswith("audio/"):
+                        unsupported += 1
+                        continue
                 media.caption = message.caption
                 aynav, vnay = await save_file(media)
                 if aynav:

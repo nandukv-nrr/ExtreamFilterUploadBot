@@ -1,14 +1,14 @@
-# Don't Remove Credit @VJ_Botz
-# Subscribe YouTube Channel For Amazing Bot @Tech_VJ
-# Ask Doubt on telegram @KingVJ01
+# Don't Remove Credit @LokahBotUniverse
+# Subscribe YouTube Channel For Amazing Bot @LokahBotUniverse
+# Ask Doubt on telegram @LokahBotUniverse
 
-# Clone Code Credit : YT - @Tech_VJ / TG - @VJ_Bots / GitHub - @VJBots
+# Clone Code Credit : YT - @LokahBotUniverse / TG - @LokahBotUniverse / GitHub - @LokahBotUniverse
 
 import datetime, time, asyncio
 from pyrogram import Client, filters
 from database.users_chats_db import db
 from pyrogram.errors import *
-from CloneTechVJ.database.clone_bot_userdb import clonedb
+from LokahTech.database.clone_bot_userdb import clonedb
         
 @Client.on_message(filters.command("broadcast"))
 async def pm_broadcast(bot, message):
@@ -54,9 +54,9 @@ async def pm_broadcast(bot, message):
     except Exception as e:
         print(f"error: {e}")
 
-# Don't Remove Credit Tg - @VJ_Botz
-# Subscribe YouTube Channel For Amazing Bot https://youtube.com/@Tech_VJ
-# Ask Doubt on telegram @KingVJ01
+# Don't Remove Credit Tg - @LokahBotUniverse
+# Subscribe YouTube Channel For Amazing Bot https://youtube.com/@LokahBotUniverse
+# Ask Doubt on telegram @LokahBotUniverse
 
 async def broadcast_messages(bot_id, user_id, message):
     try:

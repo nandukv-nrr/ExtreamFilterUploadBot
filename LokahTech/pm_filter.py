@@ -1,8 +1,8 @@
-# Don't Remove Credit @VJ_Botz
-# Subscribe YouTube Channel For Amazing Bot @Tech_VJ
-# Ask Doubt on telegram @KingVJ01
+# Don't Remove Credit @LokahBotUniverse
+# Subscribe YouTube Channel For Amazing Bot @LokahBotUniverse
+# Ask Doubt on telegram @LokahBotUniverse
 
-# Clone Code Credit : YT - @Tech_VJ / TG - @VJ_Bots / GitHub - @VJBots
+# Clone Code Credit : YT - @LokahBotUniverse / TG - @LokahBotUniverse / GitHub - @LokahBotUniverse
 
 import os, logging, string, asyncio, time, re, ast, random, math, pytz, pyrogram
 from datetime import datetime, timedelta, date, time
@@ -72,10 +72,10 @@ async def next_page(bot, query):
     btn = [
         [
             InlineKeyboardButton(
-                text=f"[{get_size(filevj['file_size'])}] {' '.join(filter(lambda x: not x.startswith('[') and not x.startswith('@') and not x.startswith('www.'), filevj['file_name'].split()))}", callback_data=f"file#{filevj['file_id']}"
+                text=f"[{get_size(filelbu['file_size'])}] {' '.join(filter(lambda x: not x.startswith('[') and not x.startswith('@') and not x.startswith('www.'), filelbu['file_name'].split()))}", callback_data=f"file#{filelbu['file_id']}"
             ),
         ]
-        for filevj in files
+        for filelbu in files
     ]
 
     btn.insert(0, 
@@ -222,10 +222,10 @@ async def filter_yearss_cb_handler(client: Client, query: CallbackQuery):
     btn = [
         [
             InlineKeyboardButton(
-                text=f"[{get_size(filevj['file_size'])}] {' '.join(filter(lambda x: not x.startswith('[') and not x.startswith('@') and not x.startswith('www.'), filevj['file_name'].split()))}", callback_data=f"file#{filevj['file_id']}"
+                text=f"[{get_size(filelbu['file_size'])}] {' '.join(filter(lambda x: not x.startswith('[') and not x.startswith('@') and not x.startswith('www.'), filelbu['file_name'].split()))}", callback_data=f"file#{filelbu['file_id']}"
             ),
         ]
-        for filevj in files
+        for filelbu in files
     ]
     btn.insert(0, 
         [
@@ -334,10 +334,10 @@ async def filter_episodes_cb_handler(client: Client, query: CallbackQuery):
     btn = [
         [
             InlineKeyboardButton(
-                text=f"[{get_size(filevj['file_size'])}] {' '.join(filter(lambda x: not x.startswith('[') and not x.startswith('@') and not x.startswith('www.'), filevj['file_name'].split()))}", callback_data=f"file#{filevj['file_id']}"
+                text=f"[{get_size(filelbu['file_size'])}] {' '.join(filter(lambda x: not x.startswith('[') and not x.startswith('@') and not x.startswith('www.'), filelbu['file_name'].split()))}", callback_data=f"file#{filelbu['file_id']}"
             ),
         ]
-        for filevj in files
+        for filelbu in files
     ]
     btn.insert(0, 
         [
@@ -448,16 +448,16 @@ async def filter_languages_cb_handler(client: Client, query: CallbackQuery):
     btn = [
         [
             InlineKeyboardButton(
-                text=f"[{get_size(filevj['file_size'])}] {' '.join(filter(lambda x: not x.startswith('[') and not x.startswith('@') and not x.startswith('www.'), filevj['file_name'].split()))}", callback_data=f"file#{filevj['file_id']}"
+                text=f"[{get_size(filelbu['file_size'])}] {' '.join(filter(lambda x: not x.startswith('[') and not x.startswith('@') and not x.startswith('www.'), filelbu['file_name'].split()))}", callback_data=f"file#{filelbu['file_id']}"
             ),
         ]
-        for filevj in files
+        for filelbu in files
     ]
     btn.insert(0, 
         [
             InlineKeyboardButton(f'ǫᴜᴀʟɪᴛʏ', callback_data=f"qualities#{key}"),
-            InlineKeyboardButton("ᴇᴘɪsᴏᴅᴇs", callback_data=f"episodes#{key}"),
-            InlineKeyboardButton("sᴇᴀsᴏɴs",  callback_data=f"seasons#{key}")
+            # InlineKeyboardButton("ᴇᴘɪsᴏᴅᴇs", callback_data=f"episodes#{key}"),
+            # InlineKeyboardButton("sᴇᴀsᴏɴs",  callback_data=f"seasons#{key}")
         ]
     )
     btn.insert(0, [
@@ -589,10 +589,10 @@ async def filter_seasons_cb_handler(client: Client, query: CallbackQuery):
     btn = [
         [
             InlineKeyboardButton(
-                text=f"[{get_size(filevj['file_size'])}] {' '.join(filter(lambda x: not x.startswith('[') and not x.startswith('@') and not x.startswith('www.'), filevj['file_name'].split()))}", callback_data=f"file#{filevj['file_id']}"
+                text=f"[{get_size(filelbu['file_size'])}] {' '.join(filter(lambda x: not x.startswith('[') and not x.startswith('@') and not x.startswith('www.'), filelbu['file_name'].split()))}", callback_data=f"file#{filelbu['file_id']}"
             ),
         ]
-        for filevj in files
+        for filelbu in files
     ]
     btn.insert(0, 
         [
@@ -697,10 +697,10 @@ async def filter_qualities_cb_handler(client: Client, query: CallbackQuery):
     btn = [
         [
             InlineKeyboardButton(
-                text=f"⚜️[{get_size(filevj['file_size'])}] {' '.join(filter(lambda x: not x.startswith('[') and not x.startswith('@') and not x.startswith('www.'), filevj['file_name'].split()))}", callback_data=f"file#{filevj['file_id']}"
+                text=f"⚜️[{get_size(filelbu['file_size'])}] {' '.join(filter(lambda x: not x.startswith('[') and not x.startswith('@') and not x.startswith('www.'), filelbu['file_name'].split()))}", callback_data=f"file#{filelbu['file_id']}"
             ),
         ]
-        for filevj in files
+        for filelbu in files
     ] 
     btn.insert(0, 
         [
