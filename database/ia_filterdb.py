@@ -10,12 +10,12 @@ from pymongo.errors import DuplicateKeyError
 from info import FILE_DB_URI, SEC_FILE_DB_URI, DATABASE_NAME, COLLECTION_NAME, MULTIPLE_DATABASE, USE_CAPTION_FILTER, MAX_B_TN
 
 # First Database For File Saving 
-client = MongoClient(FILE_DB_URI, tlsAllowInvalidCertificates=True)
+client = MongoClient(FILE_DB_URI, tls=True, tlsAllowInvalidCertificates=True)
 db = client[DATABASE_NAME]
 col = db[COLLECTION_NAME]
 
 # Second Database For File Saving
-sec_client = MongoClient(SEC_FILE_DB_URI, tlsAllowInvalidCertificates=True)
+sec_client = MongoClient(SEC_FILE_DB_URI, tls=True, tlsAllowInvalidCertificates=True)
 sec_db = sec_client[DATABASE_NAME]
 sec_col = sec_db[COLLECTION_NAME]
 
