@@ -1,6 +1,6 @@
-# Don't Remove Credit @VJ_Botz
-# Subscribe YouTube Channel For Amazing Bot @Tech_VJ
-# Ask Doubt on telegram @KingVJ01
+# Don't Remove Credit @LokahBotUniverse
+# Subscribe YouTube Channel For Amazing Bot @LokahBotUniverse
+# Ask Doubt on telegram @LokahBotUniverse
 
 import os, logging, string, asyncio, time, re, ast, random, math, pytz, pyrogram
 from datetime import datetime, timedelta, date, time
@@ -17,7 +17,7 @@ from database.filters_mdb import del_all, find_filter, get_filters
 from database.connections_mdb import mydb, active_connection, all_connections, delete_connection, if_active, make_active, make_inactive
 from database.gfilters_mdb import find_gfilter, get_gfilters, del_allg
 from urllib.parse import quote_plus
-from TechVJ.util.file_properties import get_name, get_hash, get_media_file_size
+from LokahBotSrc.util.file_properties import get_name, get_hash, get_media_file_size
 
 logger = logging.getLogger(__name__)
 logger.setLevel(logging.ERROR)

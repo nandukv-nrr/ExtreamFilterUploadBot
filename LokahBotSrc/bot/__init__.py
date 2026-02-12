@@ -1,6 +1,6 @@
-# Don't Remove Credit @VJ_Botz
-# Subscribe YouTube Channel For Amazing Bot @Tech_VJ
-# Ask Doubt on telegram @KingVJ01
+# Don't Remove Credit @LokahBotUniverse
+# Subscribe YouTube Channel For Amazing Bot @LokahBotUniverse
+# Ask Doubt on telegram @LokahBotUniverse
 
 from pyrogram import Client, types
 from info import *
@@ -9,7 +9,7 @@ from typing import Union, Optional, AsyncGenerator
 from aiohttp import web
 
 
-class TechVJXBot(Client):
+class LokahBotXBot(Client):
 
     def __init__(self):
         super().__init__(
@@ -64,7 +64,7 @@ class TechVJXBot(Client):
                 yield message
                 current += 1
       
-TechVJBot = TechVJXBot()
+LokahBot = LokahBotXBot()
 
 multi_clients = {}
 work_loads = {}

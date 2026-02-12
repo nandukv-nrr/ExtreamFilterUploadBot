@@ -1,8 +1,8 @@
-# Don't Remove Credit @VJ_Botz
-# Subscribe YouTube Channel For Amazing Bot @Tech_VJ
-# Ask Doubt on telegram @KingVJ01
+# Don't Remove Credit @LokahBotUniverse
+# Subscribe YouTube Channel For Amazing Bot @LokahBotUniverse
+# Ask Doubt on telegram @LokahBotUniverse
 
-# Clone Code Credit : YT - @Tech_VJ / TG - @VJ_Bots / GitHub - @VJBots
+# Clone Code Credit : YT - @LokahBotUniverse / TG - @LokahBotUniverse / GitHub - @LokahBotUniverse
 
 import os, string, logging, random, asyncio, time, datetime, re, sys, json, base64
 from Script import script
@@ -11,7 +11,7 @@ from pyrogram.errors import ChatAdminRequired, FloodWait
 from pyrogram.types import *
 from database.ia_filterdb import col, sec_col, get_file_details, unpack_new_file_id, get_bad_files
 from database.users_chats_db import db
-from CloneTechVJ.database.clone_bot_userdb import clonedb
+from LokahTech.database.clone_bot_userdb import clonedb
 from info import *
 from shortzy import Shortzy
 from utils import get_size, temp, get_seconds, get_clone_shortlink
@@ -97,12 +97,12 @@ async def start(client, message):
             return await message.reply('<b><i>No such file exist.</b></i>')
         filesarr = []
         for file in files:
-            vj_file_id = file['file_id']
-            k = await temp.BOT.send_cached_media(chat_id=PUBLIC_FILE_CHANNEL, file_id=vj_file_id)
-            vj = await client.get_messages(PUBLIC_FILE_CHANNEL, k.id)
-            mg = getattr(vj, vj.media.value)
+            lbu_file_id = file['file_id']
+            k = await temp.BOT.send_cached_media(chat_id=PUBLIC_FILE_CHANNEL, file_id=lbu_file_id)
+            lbu = await client.get_messages(PUBLIC_FILE_CHANNEL, k.id)
+            mg = getattr(lbu, lbu.media.value)
             file_id = mg.file_id
-            files_ = await get_file_details(vj_file_id)
+            files_ = await get_file_details(lbu_file_id)
             files1 = files_
             title = ' '.join(filter(lambda x: not x.startswith('[') and not x.startswith('@'), files1['file_name'].split()))
             size=get_size(files1['file_size'])
@@ -166,8 +166,8 @@ async def start(client, message):
     else:
         reply_markup=None
     k = await temp.BOT.send_cached_media(chat_id=PUBLIC_FILE_CHANNEL, file_id=file_id)
-    vj = await client.get_messages(PUBLIC_FILE_CHANNEL, k.id)
-    m = getattr(vj, vj.media.value)
+    lbu = await client.get_messages(PUBLIC_FILE_CHANNEL, k.id)
+    m = getattr(lbu, lbu.media.value)
     file_id = m.file_id
     msg = await client.send_cached_media(
         chat_id=message.from_user.id,
@@ -192,7 +192,7 @@ async def settings(client, message):
     api = await client.ask(message.chat.id, "<b>Now Send Your Api</b>")
     try:
         shortzy = Shortzy(api_key=api.text, base_site=url.text)
-        link = 'https://t.me/VJ_Botz'
+        link = 'https://t.me/LokahBotUniverse'
         await shortzy.convert(link)
     except Exception as e:
         await message.reply(f"**Error In Converting Link**\n\n<code>{e}</code>\n\n**Start The Process Again By - /settings**", reply_markup=InlineKeyboardMarkup(btn))

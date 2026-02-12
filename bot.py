@@ -1,8 +1,8 @@
-# Don't Remove Credit @VJ_Botz
-# Subscribe YouTube Channel For Amazing Bot @Tech_VJ
-# Ask Doubt on telegram @KingVJ01
+# Don't Remove Credit @LokahBotUniverse
+# Subscribe YouTube Channel For Amazing Bot @LokahBotUniverse
+# Ask Doubt on telegram @LokahBotUniverse
 
-# Clone Code Credit : YT - @Tech_VJ / TG - @VJ_Bots / GitHub - @VJBots
+# Clone Code Credit : YT - @LokahBotUniverse / TG - @LokahBotUniverse / GitHub - @LokahBotUniverse
 
 import sys, glob, importlib, logging, logging.config, pytz, asyncio
 from pathlib import Path
@@ -24,20 +24,20 @@ from aiohttp import web
 from plugins import web_server
 from plugins.clone import restart_bots
 
-from TechVJ.bot import TechVJBot
-from TechVJ.util.keepalive import ping_server
-from TechVJ.bot.clients import initialize_clients
+from LokahBotSrc.bot import LokahBot
+from LokahBotSrc.util.keepalive import ping_server
+from LokahBotSrc.bot.clients import initialize_clients
 
 ppath = "plugins/*.py"
 files = glob.glob(ppath)
-TechVJBot.start()
+LokahBot.start()
 loop = asyncio.get_event_loop()
 
 
 async def start():
     print('\n')
     print('Initalizing Your Bot')
-    bot_info = await TechVJBot.get_me()
+    bot_info = await LokahBot.get_me()
     await initialize_clients()
     for name in files:
         with open(name) as a:
@@ -49,14 +49,14 @@ async def start():
             load = importlib.util.module_from_spec(spec)
             spec.loader.exec_module(load)
             sys.modules["plugins." + plugin_name] = load
-            print("Tech VJ Imported => " + plugin_name)
+            print("LokahBotPlugin Imported => " + plugin_name)
     if ON_HEROKU:
         asyncio.create_task(ping_server())
     b_users, b_chats = await db.get_banned()
     temp.BANNED_USERS = b_users
     temp.BANNED_CHATS = b_chats
-    me = await TechVJBot.get_me()
-    temp.BOT = TechVJBot
+    me = await LokahBot.get_me()
+    temp.BOT = LokahBot
     temp.ME = me.id
     temp.U_NAME = me.username
     temp.B_NAME = me.first_name
@@ -66,17 +66,17 @@ async def start():
     now = datetime.now(tz)
     time = now.strftime("%H:%M:%S %p")
     try:
-        await TechVJBot.send_message(chat_id=LOG_CHANNEL, text=script.RESTART_TXT.format(today, time))
+        await LokahBot.send_message(chat_id=LOG_CHANNEL, text=script.RESTART_TXT.format(today, time))
     except:
         print("Make Your Bot Admin In Log Channel With Full Rights")
     for ch in CHANNELS:
         try:
-            k = await TechVJBot.send_message(chat_id=ch, text="**Bot Restarted**")
+            k = await LokahBot.send_message(chat_id=ch, text="**Bot Restarted**")
             await k.delete()
         except:
             print("Make Your Bot Admin In File Channels With Full Rights")
     try:
-        k = await TechVJBot.send_message(chat_id=AUTH_CHANNEL, text="**Bot Restarted**")
+        k = await LokahBot.send_message(chat_id=AUTH_CHANNEL, text="**Bot Restarted**")
         await k.delete()
     except:
         print("Make Your Bot Admin In Force Subscribe Channel With Full Rights")

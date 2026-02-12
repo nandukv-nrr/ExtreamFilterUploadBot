@@ -1,17 +1,17 @@
-# Don't Remove Credit @VJ_Botz
-# Subscribe YouTube Channel For Amazing Bot @Tech_VJ
-# Ask Doubt on telegram @KingVJ01
+# Don't Remove Credit @LokahBotUniverse
+# Subscribe YouTube Channel For Amazing Bot @LokahBotUniverse
+# Ask Doubt on telegram @LokahBotUniverse
 
 import re, math, logging, secrets, mimetypes, time
 from info import *
 from aiohttp import web
 from aiohttp.http_exceptions import BadStatusLine
-from TechVJ.bot import multi_clients, work_loads, TechVJBot
-from TechVJ.server.exceptions import FIleNotFound, InvalidHash
-from TechVJ import StartTime, __version__
-from TechVJ.util.custom_dl import ByteStreamer
-from TechVJ.util.time_format import get_readable_time
-from TechVJ.util.render_template import render_page
+from LokahBotSrc.bot import multi_clients, work_loads, LokahBot
+from LokahBotSrc.server.exceptions import FIleNotFound, InvalidHash
+from LokahBotSrc import StartTime, __version__
+from LokahBotSrc.util.custom_dl import ByteStreamer
+from LokahBotSrc.util.time_format import get_readable_time
+from LokahBotSrc.util.render_template import render_page
 
 routes = web.RouteTableDef()
 
