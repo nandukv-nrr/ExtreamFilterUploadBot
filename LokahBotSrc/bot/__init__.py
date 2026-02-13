@@ -12,15 +12,27 @@ from aiohttp import web
 class LokahBotXBot(Client):
 
     def __init__(self):
-        super().__init__(
-            name=SESSION,
-            api_id=API_ID,
-            api_hash=API_HASH,
-            bot_token=BOT_TOKEN,
-            workers=150,
-            plugins={"root": "plugins"},
-            sleep_threshold=5,
-        )
+       if isinstance(SESSION, str) and len(SESSION) > 50:
+            super().__init__(
+                name="LokahBotUniverse",
+                api_id=API_ID,
+                api_hash=API_HASH,
+                bot_token=BOT_TOKEN,
+                workers=150,
+                plugins={"root": "plugins"},
+                sleep_threshold=5,
+                session_string=SESSION,
+            )
+       else:
+            super().__init__(
+                name=SESSION,
+                api_id=API_ID,
+                api_hash=API_HASH,
+                bot_token=BOT_TOKEN,
+                workers=150,
+                plugins={"root": "plugins"},
+                sleep_threshold=5,
+            )
 
     async def set_self(self):
         temp.BOT = self
