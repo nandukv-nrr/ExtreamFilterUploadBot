@@ -82,16 +82,15 @@ async def get_search_results(chat_id, query, file_type=None, max_results=10, off
     
     query = query.strip()
     if not query:
-        raw_pattern = '.'
-    elif ' ' not in query:
-        raw_pattern = r'.*'.join(re.escape(q) for q in query.split())
+        filter = {'file_name': re.compile('.', flags=re.IGNORECASE)}
     else:
-        raw_pattern = r'.*'.join(re.escape(q) for q in query.split())
-    try:
-        regex = re.compile(raw_pattern, flags=re.IGNORECASE)
-    except:
-        regex = query
-    filter = {'file_name': regex}
+        terms = query.split()
+        if len(terms) == 1:
+            regex = re.compile(re.escape(terms[0]), flags=re.IGNORECASE)
+            filter = {'file_name': regex}
+        else:
+            regex_list = [re.compile(re.escape(term), flags=re.IGNORECASE) for term in terms]
+            filter = {'$and': [{'file_name': regex} for regex in regex_list]}
     files = []
     if MULTIPLE_DATABASE:
         cursor1 = col.find(filter).sort('$natural', -1).skip(offset).limit(max_results)
@@ -117,20 +116,20 @@ async def get_bad_files(query, file_type=None, use_filter=False):
     query = query.strip()
     
     if not query:
-        raw_pattern = '.'
-    elif ' ' not in query:
-        raw_pattern = r'.*'.join(re.escape(q) for q in query.split())
+        filter_criteria = {'file_name': re.compile('.', flags=re.IGNORECASE)}
     else:
-        raw_pattern = r'.*'.join(re.escape(q) for q in query.split())
-    
-    try:
-        regex = re.compile(raw_pattern, flags=re.IGNORECASE)
-    except re.error:
-        return [], 0
-
-    filter_criteria = {'file_name': regex}
-    if USE_CAPTION_FILTER:
-        filter_criteria = {'$or': [filter_criteria, {'caption': regex}]}
+        terms = query.split()
+        if len(terms) == 1:
+            regex = re.compile(re.escape(terms[0]), flags=re.IGNORECASE)
+            filter_criteria = {'file_name': regex}
+            if USE_CAPTION_FILTER:
+                filter_criteria = {'$or': [filter_criteria, {'caption': regex}]}
+        else:
+            regex_list = [re.compile(re.escape(term), flags=re.IGNORECASE) for term in terms]
+            filter_criteria = {'$and': [{'file_name': regex} for regex in regex_list]}
+            if USE_CAPTION_FILTER:
+                caption_criteria = {'$and': [{'caption': regex} for regex in regex_list]}
+                filter_criteria = {'$or': [filter_criteria, caption_criteria]}
 
     def count_documents(collection):
         return collection.count_documents(filter_criteria)
