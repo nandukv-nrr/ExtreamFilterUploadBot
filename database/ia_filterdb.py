@@ -84,9 +84,9 @@ async def get_search_results(chat_id, query, file_type=None, max_results=10, off
     if not query:
         raw_pattern = '.'
     elif ' ' not in query:
-        raw_pattern = r'(\b|[\.\+\-_])' + query + r'(\b|[\.\+\-_])'
+        raw_pattern = r'.*'.join(re.escape(q) for q in query.split())
     else:
-        raw_pattern = query.replace(' ', r'.*[\s\.\+\-_]') 
+        raw_pattern = r'.*'.join(re.escape(q) for q in query.split())
     try:
         regex = re.compile(raw_pattern, flags=re.IGNORECASE)
     except:
@@ -119,9 +119,9 @@ async def get_bad_files(query, file_type=None, use_filter=False):
     if not query:
         raw_pattern = '.'
     elif ' ' not in query:
-        raw_pattern = rf'(\b|[.+-_]){query}(\b|[.+-_])'
+        raw_pattern = r'.*'.join(re.escape(q) for q in query.split())
     else:
-        raw_pattern = query.replace(' ', r'.*[s.+-_]')
+        raw_pattern = r'.*'.join(re.escape(q) for q in query.split())
     
     try:
         regex = re.compile(raw_pattern, flags=re.IGNORECASE)
