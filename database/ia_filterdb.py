@@ -24,7 +24,16 @@ async def save_file(media):
     """Save file in the database."""
     
     file_id = unpack_new_file_id(media.file_id)
-    file_name = clean_file_name(media.file_name)
+    file_name = media.file_name
+    if not file_name:
+        if hasattr(media, 'title') and media.title:
+            if hasattr(media, 'performer') and media.performer:
+                file_name = f"{media.performer} - {media.title}"
+            else:
+                file_name = media.title
+        else:
+            file_name = "None"
+    file_name = clean_file_name(file_name)
     
     file = {
         'file_id': file_id,
